@@ -1,9 +1,9 @@
-package Views;
+package Calculator.Views;
 
 import java.util.Scanner;
 
 public class ConsoleView {
-    Scanner in;
+    private Scanner in;
     public ConsoleView() {
         in = new Scanner(System.in);
     }
