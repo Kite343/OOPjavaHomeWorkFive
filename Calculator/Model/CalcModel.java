@@ -3,33 +3,39 @@ package Calculator.Model;
 import Calculator.Numbers.Complex;
 import Calculator.Numbers.Rational;
 
+// Два типа реализации- один на примере комплексных, другой на примере рациональных. какой вариант правильный?
 public class CalcModel {
-    Rational rationalA;
-    Rational rationalB;
+    Rational rationalA = new Rational();
+    Rational rationalB = new Rational();
+    RationalOperation rOperation = new RationalOperation();
 
     Complex complexA;
     Complex complexB;
 
     public Rational rationalRes(int a1, int b1, int a2, int b2, String op) {
-        this.rationalA = new Rational(a1, b1);
-        this.rationalB = new Rational(a2, b2);        
+        // this.rationalA = new Rational(a1, b1);
+        // this.rationalB = new Rational(a2, b2);     
+        this.rationalA.setNominator(a1);
+        this.rationalA.setDenominator(b1);
+        this.rationalB.setNominator(a2);
+        this.rationalB.setDenominator(b2);
 
         switch (op) {
             case "+":
                 
-                return new RationalModel(rationalA, rationalB).sum();
+                return rOperation.sum(rationalA, rationalB);
 
             case "-":
                 
-                return new RationalModel(rationalA, rationalB).minus();  
+                return rOperation.minus(rationalA, rationalB);  
 
             case "*":
 
-                return new RationalModel(rationalA, rationalB).mult();
+                return rOperation.mult(rationalA, rationalB);
 
             case "/":
 
-                return new RationalModel(rationalA, rationalB).div();
+                return rOperation.div(rationalA, rationalB);
         
             default:
                 return null;

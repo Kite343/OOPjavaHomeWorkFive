@@ -22,7 +22,7 @@ public class RationalModel extends Model<Rational>{
 
     @Override
     public Rational sum() {
-        
+        // временное, неправильное сложение
         this.result = new Rational(a.getNominator() + b.getNominator(), a.getDenominator() + b.getDenominator());
         return result;
     }

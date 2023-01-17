@@ -6,9 +6,12 @@ public class Complex {
 
     public Complex(double real, double image) {
         this.real = real;
-        this.image = image;
-
-        
+        this.image = image;        
+    }
+    
+    public Complex() {
+        this.real = 0;
+        this.image = 0;        
     }
 
     public double getReal() {

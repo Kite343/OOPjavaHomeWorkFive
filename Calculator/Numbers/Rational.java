@@ -4,14 +4,6 @@ public class Rational {
     private int nominator;
     private int denominator;
 
-    public int getDenominator() {
-        return denominator;
-    }
-
-    public int getNominator() {
-        return nominator;
-    }
-
     public Rational() {
         this(0, 1);
     }
@@ -23,6 +15,22 @@ public class Rational {
     public Rational(int nominator, int denominator) {
         this.nominator = nominator;
         this.denominator = denominator;
+    }
+    
+    public void setNominator(int nominator) {
+        this.nominator = nominator;
+    }
+
+    public int getNominator() {
+        return nominator;
+    }     
+    
+    public void setDenominator(int denominator) {
+        this.denominator = denominator;
+    }
+    
+    public int getDenominator() {
+        return denominator;
     }
 
 
