@@ -2,49 +2,48 @@ package Calculator.Model;
 
 import Calculator.Numbers.Rational;
 
-public class RationalModel extends Model implements Operations<Rational>{
+public class RationalModel extends Model<Rational>{
 
-    Rational a;
-    Rational b;
-    Rational result;
-    public RationalModel(){
-    }
+    // public RationalModel(){
+    // }
 
     public RationalModel(Rational a, Rational b) {
         this.a = a;
         this.b = b;
     }
-
-    // public RationalModel(Rational a, Rational b, String operation) {
-    //     super(operation);
-    //     this.a = a;
-    //     this.b = b;
+   
+    // public void setA(int x, int y) {
+    //     super.a = new Rational(x, y);
     // }
-
-    // public Rational getA() {
-    //     return a;
-    // }
-
-    public void setA(Rational a) {
-        this.a = a;
-    }
-
-    public void setA(int x, int y) {
-        this.a = new Rational(x, y);
-    }
     
-    // public Rational getB() {
-    //     return b;
+    // public void setB(int x, int y) {
+    //     super.b = new Rational(x, y);
     // }
 
-    public void setB(Rational b) {
-        this.b = b;
+    @Override
+    public Rational sum() {
+        
+        this.result = new Rational(a.getNominator() + b.getNominator(), a.getDenominator() + b.getDenominator());
+        return result;
     }
 
-    public void setB(int x, int y) {
-        this.b = new Rational(x, y);
+    @Override
+    public Rational minus() {
+        
+        return result;
     }
 
+    @Override
+    public Rational mult() {
+        
+        return result;
+    }
+
+    @Override
+    public Rational div() {
+        
+        return result;
+    }    
     
     // public Rational getResult() {
     //     switch (super.operation) {
@@ -69,30 +68,5 @@ public class RationalModel extends Model implements Operations<Rational>{
     //     }
     //     return result;
     // }  
-
-    @Override
-    public Rational sum() {
-        // TODO Auto-generated method stub
-        this.result = new Rational(a.getNominator() + b.getNominator(), a.getDenominator() + b.getDenominator());
-        return result;
-    }
-
-    @Override
-    public Rational minus() {
-        // TODO Auto-generated method stub
-        return result;
-    }
-
-    @Override
-    public Rational multiplication() {
-        // TODO Auto-generated method stub
-        return result;
-    }
-
-    @Override
-    public Rational division() {
-        // TODO Auto-generated method stub
-        return result;
-    }
 
 }

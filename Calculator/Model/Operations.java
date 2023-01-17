@@ -5,7 +5,7 @@ public interface Operations <T>{
 
     public T minus();
 
-    public T multiplication();
+    public T mult();
 
-    public T  division();
+    public T  div();
 }
