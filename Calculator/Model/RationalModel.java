@@ -8,7 +8,11 @@ public class RationalModel extends Model implements Operations<Rational>{
     Rational b;
     Rational result;
     public RationalModel(){
+    }
 
+    public RationalModel(Rational a, Rational b) {
+        this.a = a;
+        this.b = b;
     }
 
     // public RationalModel(Rational a, Rational b, String operation) {
@@ -69,6 +73,7 @@ public class RationalModel extends Model implements Operations<Rational>{
     @Override
     public Rational sum() {
         // TODO Auto-generated method stub
+        this.result = new Rational(a.getNominator() + b.getNominator(), a.getDenominator() + b.getDenominator());
         return result;
     }
 

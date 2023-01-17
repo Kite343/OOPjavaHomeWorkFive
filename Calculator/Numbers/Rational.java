@@ -4,6 +4,14 @@ public class Rational {
     private int nominator;
     private int denominator;
 
+    public int getDenominator() {
+        return denominator;
+    }
+
+    public int getNominator() {
+        return nominator;
+    }
+
     public Rational() {
         this(0, 1);
     }
@@ -18,8 +26,8 @@ public class Rational {
     }
 
 
-    public float getValue() {
-        return nominator / (float) denominator;
+    public double getValue() {
+        return nominator / (double) denominator;
     }
 
     @Override
