@@ -5,8 +5,8 @@ import Calculator.Numbers.Complex;
 public class ComplexModel extends Model<Complex>{
 
     public ComplexModel(Complex a, Complex b) {
-        this.a = a;
-        this.b = b;
+        super.a = a;
+        super.b = b;
     }
 
     // public void setA(double x, double y) {
@@ -17,27 +17,33 @@ public class ComplexModel extends Model<Complex>{
     //     super.b = new Complex(x, y);
     // }
 
+    
+    // логика не прописана, установлены временные значения для проверки работы
     @Override
     public Complex sum() {
-        // TODO Auto-generated method stub
+        super.result = new Complex(a.getReal() + b.getReal(),a.getImage() + b.getImage());        
         return result;
     }
 
     @Override
     public Complex minus() {
-        // TODO Auto-generated method stub
+        super.result = new Complex(a.getReal() - b.getReal(),a.getImage() - b.getImage());
         return result;
     }
 
     @Override
     public Complex mult() {
-        // TODO Auto-generated method stub
+        double newR = a.getReal() * b.getReal() - a.getImage() * b.getImage();
+        double newI = a.getReal() * b.getImage() + a.getImage() * b.getReal();
+        super.result = new Complex(newR, newI);
         return result;
     }
 
     @Override
     public Complex div() {
-        // TODO Auto-generated method stub
+        double newR = (a.getReal() * b.getReal() + a.getImage() * b.getImage()) / (b.getReal() * b.getReal() + b.getImage() * b.getImage());
+        double newI = (a.getImage() * b.getReal() - a.getReal() * b.getImage()) / (b.getReal() * b.getReal() + b.getImage() * b.getImage());
+        super.result = new Complex(newR, newI);
         return result;
     }
     

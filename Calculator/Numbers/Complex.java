@@ -8,6 +8,11 @@ public class Complex {
         this.real = real;
         this.image = image;        
     }
+
+    public Complex(double real) {
+        this.real = real;
+        this.image = 0;        
+    }
     
     public Complex() {
         this.real = 0;
@@ -34,6 +39,9 @@ public class Complex {
     public String toString() {
         if(image < 0){
             return real + "" + image + "i";
+        }
+        else if(image == 0){
+            return real + "";
         }
         return real + "+" + image + "i";
     }   

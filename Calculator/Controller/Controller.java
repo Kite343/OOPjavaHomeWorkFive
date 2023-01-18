@@ -13,6 +13,7 @@ public class Controller {
     }
     
     void menu(){
+        boolean start = true;
         
     };
     

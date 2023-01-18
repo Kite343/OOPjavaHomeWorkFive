@@ -20,28 +20,31 @@ public class RationalModel extends Model<Rational>{
     //     super.b = new Rational(x, y);
     // }
 
+    
+    // не реализовано сокращение дроби
     @Override
     public Rational sum() {
-        // временное, неправильное сложение
-        this.result = new Rational(a.getNominator() + b.getNominator(), a.getDenominator() + b.getDenominator());
+        int nom = a.getNominator() * b.getDenominator() + b.getNominator() * a.getDenominator();
+        super.result = new Rational(nom, a.getDenominator() * b.getDenominator());
         return result;
     }
 
     @Override
     public Rational minus() {
-        
+        int nom = a.getNominator() * b.getDenominator() - b.getNominator() * a.getDenominator();
+        super.result = new Rational(nom, a.getDenominator() * b.getDenominator());
         return result;
     }
 
     @Override
     public Rational mult() {
-        
+        super.result = new Rational(a.getNominator() * b.getNominator(), a.getDenominator() * b.getDenominator());
         return result;
     }
 
     @Override
     public Rational div() {
-        
+        super.result = new Rational(a.getNominator() * b.getDenominator(), a.getDenominator() * b.getNominator());
         return result;
     }    
     
