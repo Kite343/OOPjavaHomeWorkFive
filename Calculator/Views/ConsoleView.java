@@ -9,27 +9,31 @@ public class ConsoleView {
     }
 
     public String getValueStr(String title) {
-        System.out.printf("%s", title);
-        return in.nextLine();
+        System.out.println(title);
+        return in.next();
+    }
+
+    public void print(String title) {
+        System.out.println(title);
     }
 
     
-    public void print(String data, String title) {
+    public void printInt(int data, String title) {
         System.out.printf("%s %d\n", title, data);
     }
 
-    public int getValue(String title) {
-        System.out.printf("%s", title);
+    public int getValueInt(String title) {
+        System.out.printf("%s\n", title);
         return in.nextInt();
     }
 
     
-    public void print(int data, String title) {
+    public void printDouble(double data, String title) {
         System.out.printf("%s %d\n", title, data);
     }
 
     public double getValueDouble(String title) {
-        System.out.printf("%s", title);
+        System.out.printf("%s\n", title);
         return in.nextDouble();
     }
 
